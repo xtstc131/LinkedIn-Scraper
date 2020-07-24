@@ -79,22 +79,22 @@ const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
 
   // Run queries concurrently
   await Promise.all([
-    scraper.run("software graduate", "United States", {
+    scraper.run("software graduate", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("software grad", "United States", {
+    scraper.run("software grad", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("software college", "United States", {
+    scraper.run("software college", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("software university", "United States", {
+    scraper.run("software university", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("entry software", "United States", {
+    scraper.run("entry software", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("junior developer", "United States", {
+    scraper.run("junior developer", "Canada", {
       paginationMax: 2
     })
   ]);
