@@ -1,5 +1,5 @@
 import BootstrapTable from "react-bootstrap-table-next";
-import React, { Component } from "react";
+import React from "react";
 import * as data from "../output.json";
 import ToolkitProvider, {
   Search,
@@ -7,7 +7,6 @@ import ToolkitProvider, {
 } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 const { SearchBar } = Search;
-const { ToggleList } = ColumnToggle;
 
 function linkFormatter(cell, row) {
   return (

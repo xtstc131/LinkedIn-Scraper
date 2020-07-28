@@ -4,15 +4,7 @@ import React from "react";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import MultiSortTable from "./components/table";
-import {
-  Container,
-  Col,
-  Navbar,
-  Nav,
-  Jumbotron,
-  Button,
-  ModalFooter
-} from "react-bootstrap";
+import { Container, Navbar, Nav, Jumbotron, Button } from "react-bootstrap";
 
 function App() {
   return (
@@ -29,7 +21,7 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
       <Jumbotron className="text-center">
-        <h1>🐈!</h1>
+        <span role="img">🐈!</span>
         <p>
           Tacocat is a platform for supporting the latest free software engineer
           job information for the new graduates. Temporarily supported by a
