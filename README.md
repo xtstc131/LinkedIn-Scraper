@@ -1,3 +1,4 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app)](https://hits.seeyoufarm.com)
 # LinkedIn Spider
 
 This is a platform supporting the latest free software engineer job information for the new graduates.
