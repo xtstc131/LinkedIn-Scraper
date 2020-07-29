@@ -1,4 +1,4 @@
-const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
+import { LinkedinScraper, events } from "linkedin-jobs-scraper";
 
 (async () => {
   // Programatically disable logger

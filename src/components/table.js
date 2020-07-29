@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import BootstrapTable from "react-bootstrap-table-next";
 import React from "react";
 import * as data from "../output.json";
