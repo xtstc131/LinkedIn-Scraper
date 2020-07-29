@@ -5,13 +5,12 @@
 This is a platform supporting the latest free software engineer job information for the new graduates.
 The keywords includes software grad, entry Software, Software university, Software graduate, Software college, junior developer, will be used for LinkedIn job search.
 
-
-
 Temporarily supported by a hard-working [LinkedIn scraper](https://www.npmjs.com/package/linkedin-jobs-scraper), which works 996 and never sleep.
 **Only for self study purpose. No commercial usage allowed**
 
 ## Demo
 
+![Screenshot](./demo.png)
 [Try it here](https://linkedin-spider.netlify.app)
 
 Note that the column can be `sortable`. Nimbly to use `search` for better filtering.
