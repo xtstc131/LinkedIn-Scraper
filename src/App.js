@@ -41,6 +41,7 @@ function App() {
       <Container>
         <MultiSortTable></MultiSortTable>
         <p>© 2020. All rights reserved.</p>
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app" />
       </Container>
     </div>
   );
