@@ -7,13 +7,15 @@ import ToolkitProvider, {
   ColumnToggle
 } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
+import "./table.css";
 const { SearchBar } = Search;
 
 function linkFormatter(cell, row) {
   return (
     <span>
-      {" "}
-      <a href={cell}>Link</a>
+      <a href={cell} target="_blank" rel="noopener noreferrer">
+        🔗 Link
+      </a>
     </span>
   );
 }
@@ -25,38 +27,47 @@ const defaultSorted = [
 ];
 
 // eslint-disable-next-line react/display-name
-export default () => (
-  <div>
-    <ToolkitProvider
-      keyField="id"
-      data={data.data}
-      columns={columns}
-      search
-      columnToggle
-    >
-      {props => (
-        <div>
-          <SearchBar
-            {...props.searchProps}
-            placeholder={"Search for " + data.data.length + " items..."}
-          />
-          <div />
-          {/* <ToggleList 
-            btnClassName="list-btn-custom-class" 
-            { ...props.columnToggleProps } /> */}
-          <BootstrapTable
-            bootstrap4
-            {...props.baseProps}
-            pagination={paginationFactory()}
-            caption={"latest update on: " + data.time}
-            defaultSorted={defaultSorted}
-          />
-        </div>
-      )}
-    </ToolkitProvider>
-  </div>
-);
+class Table extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // console.log(this.props.source);
+    return (
+      <div className="bg-white">
+        <div className="bg-white"></div>
 
+        <ToolkitProvider
+          keyField="tk_id"
+          data={data.data}
+          columns={columns}
+          search
+          columnToggle
+        >
+          {props => (
+            <div>
+              <SearchBar
+                {...props.searchProps}
+                placeholder={"Search for " + data.data.length + " items..."}
+              />
+              <div />
+              <BootstrapTable
+                keyField="table_id"
+                bootstrap4
+                {...props.baseProps}
+                pagination={paginationFactory()}
+                caption={"latest update on: " + data.time}
+                defaultSorted={defaultSorted}
+              />
+            </div>
+          )}
+        </ToolkitProvider>
+      </div>
+    );
+  }
+}
+
+export default Table;
 const columns = [
   {
     dataField: "title",
@@ -91,13 +102,13 @@ const columns = [
   {
     dataField: "link",
     text: "Link",
-    sort: true,
+    sort: false,
     formatter: linkFormatter
   },
   {
     dataField: "industries",
     text: "Industries",
-    sort: true
+    sort: false
   }
 ];
 

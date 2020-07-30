@@ -1,16 +1,25 @@
 import React from "react";
-// import logo from "./logo.svg";
-// import './App.css';
+import "./App.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import MultiSortTable from "./components/table";
-import { Container, Navbar, Nav, Jumbotron, Button } from "react-bootstrap";
+import github_logo from "./imgs/GitHub-Mark-64px.png";
+
+import Table from "./components/table";
+import {
+  Container,
+  Navbar,
+  Nav,
+  Jumbotron,
+  Button,
+  Row,
+  Col
+} from "react-bootstrap";
 
 function App() {
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">MalloCat</Navbar.Brand>
+        <Navbar.Brand href="#home">🐈</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -18,28 +27,39 @@ function App() {
               About
             </Nav.Link>
             <Nav.Link href="#home">Contact</Nav.Link>
-            <Nav.Link href="#home">Like❤me</Nav.Link>
+            <Nav.Link href="https://github.com/xtstc131/LinkedIn-Scraper">
+              Contribute
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
       <Jumbotron className="text-center">
-        <span role="img">🐈!</span>
-        <p>
-          MalloCat is a platform for supporting the latest free software
-          engineer job information for the new graduates. Temporarily supported
-          by a hard-working LinkedIn scraper, which works 996 and never sleep.
-        </p>
-        <p>
-          <Button
-            variant="primary"
-            href="https://github.com/xtstc131/LinkedIn-Scraper"
-          >
-            Learn more
-          </Button>
-        </p>
+        <Container>
+          <Row>
+            <Col></Col>
+            <Col xs={6}>
+              <h1 className="jumbotron-heading">MalloCat</h1>
+              <p className="lead ">
+                MalloCat is a platform for displaying the latest Software
+                Engineer job information to the new graduates. Supported by
+                automatic running crawlers targeting on LinkedIn & Indeed.
+              </p>
+              <p>
+                <Button
+                  variant="outline-dark"
+                  href="https://github.com/xtstc131/LinkedIn-Scraper"
+                >
+                  Github
+                  <img className="btn_logo" src={github_logo} alt="" />
+                </Button>
+              </p>
+            </Col>
+            <Col></Col>
+          </Row>
+        </Container>
       </Jumbotron>
       <Container>
-        <MultiSortTable></MultiSortTable>
+        <Table source="indeed"></Table>
         <p>© 2020. All rights reserved.</p>
         <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app" />
       </Container>
