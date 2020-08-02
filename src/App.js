@@ -42,7 +42,7 @@ function App() {
               <p className="lead ">
                 MalloCat is a platform for displaying the latest Software
                 Engineer job information to the new graduates. Supported by
-                automatic running crawlers targeting on LinkedIn & Indeed.
+                automatic running crawlers targeting on LinkedIn.
               </p>
               <p>
                 <Button
