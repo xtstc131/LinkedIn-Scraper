@@ -1,5 +1,6 @@
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app)](https://hits.seeyoufarm.com)
 # LinkedIn Spider
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app)](https://hits.seeyoufarm.com)
 
 This is a platform supporting the latest free software engineer job information for the new graduates.
 The keywords includes software grad, entry Software, Software university, Software graduate, Software college, junior developer, will be used for LinkedIn job search.
@@ -22,10 +23,6 @@ I use is `Node 12.18` and `npm 6.14`.
 
 To display the website, run `npm start`. Then visit `localhost:3000` as default. To run the
 scraper, simply run `node index.js`, and wait for 2 minutes until page reloading.
-
-## Work in Progress
-
-
 
 ## Todos
 
