@@ -45,7 +45,7 @@ class Table extends React.Component {
           columnToggle
         >
           {props => (
-            <div>
+            <div classes="table">
               <SearchBar
                 {...props.searchProps}
                 placeholder={"Search for " + data.data.length + " items..."}

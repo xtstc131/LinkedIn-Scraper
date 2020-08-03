@@ -46,6 +46,7 @@ function App() {
               </p>
               <p>
                 <Button
+                  className="rounded-pill"
                   variant="outline-dark"
                   href="https://github.com/xtstc131/LinkedIn-Scraper"
                 >

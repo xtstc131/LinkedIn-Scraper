@@ -17,6 +17,10 @@ label {
     border-bottom-right-radius: 0rem;
 }
 
+.table {
+    word-wrap: break-word;
+}
+
 .pagination {
     float: right;
 }
