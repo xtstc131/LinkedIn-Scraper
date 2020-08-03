@@ -19,7 +19,11 @@ function App() {
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">🐈</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <span role="img" aria-label="logo">
+            🐈
+          </span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -62,7 +66,10 @@ function App() {
       <Container>
         <Table source="linkedin"></Table>
         <p>© 2020. All rights reserved.</p>
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app" />
+        <img
+          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app"
+          alt=""
+        />
       </Container>
     </div>
   );

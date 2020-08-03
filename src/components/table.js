@@ -2,10 +2,7 @@
 import BootstrapTable from "react-bootstrap-table-next";
 import React from "react";
 import * as data from "../linkedin_output.json";
-import ToolkitProvider, {
-  Search,
-  ColumnToggle
-} from "react-bootstrap-table2-toolkit";
+import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import "./table.css";
 const { SearchBar } = Search;
@@ -14,7 +11,10 @@ function linkFormatter(cell, row) {
   return (
     <span>
       <a href={cell} target="_blank" rel="noopener noreferrer">
-        🔗 Link
+        <span role="img" aria-label="link">
+          🔗{" "}
+        </span>
+        Link
       </a>
     </span>
   );
@@ -25,12 +25,46 @@ const defaultSorted = [
     order: "desc"
   }
 ];
-
+const customTotal = (from, to, size) => (
+  <span className="react-bootstrap-table-pagination-total">
+    Showing {from} to {to} of {size} Results
+  </span>
+);
+const options = {
+  paginationSize: 5,
+  pageStartIndex: 1,
+  // alwaysShowAllBtns: true, // Always show next and previous button
+  // withFirstAndLast: false, // Hide the going to First and Last page button
+  // hideSizePerPage: false, // Hide the sizePerPage dropdown always
+  // hidePageListOnlyOnePage: true, // Hide the pagination list when only one page
+  firstPageText: "First",
+  prePageText: "Back",
+  nextPageText: "Next",
+  lastPageText: "Last",
+  nextPageTitle: "First page",
+  prePageTitle: "Pre page",
+  firstPageTitle: "Next page",
+  lastPageTitle: "Last page",
+  showTotal: true,
+  paginationTotalRenderer: customTotal,
+  disablePageTitle: true,
+  sizePerPageList: [
+    {
+      text: "5",
+      value: 5
+    },
+    {
+      text: "10",
+      value: 10
+    },
+    {
+      text: "All",
+      value: data.data.length
+    }
+  ] // A numeric array is also available. the purpose of above example is custom the text
+};
 // eslint-disable-next-line react/display-name
 class Table extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     // console.log(this.props.source);
     return (
@@ -55,7 +89,7 @@ class Table extends React.Component {
                 keyField="table_id"
                 bootstrap4
                 {...props.baseProps}
-                pagination={paginationFactory()}
+                pagination={paginationFactory(options)}
                 caption={"latest update on: " + data.time}
                 defaultSorted={defaultSorted}
               />
