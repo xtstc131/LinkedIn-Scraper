@@ -1,5 +1,5 @@
 #!/bin/zsh
-DATE_N=`date "+%Y-%m-%d"`
+DATE_N=`date "+%Y-%m-%d %H:%M:%S"`
 node index.js
 
 git add .
