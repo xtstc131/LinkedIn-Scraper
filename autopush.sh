@@ -1,5 +1,4 @@
 #!/bin/zsh
-cd ~/Documents/GitHub/tacocat
 DATE_N=`date "+%Y-%m-%d %H:%M:%S"`
 node index.js
 
