@@ -1,9 +1,11 @@
-#!/bin/zsh
-DATE_N=`date "+%Y-%m-%d %H:%M:%S"`
-node index.js
+#!/bin/sh
+DATE_N=`/bin/date "+%Y-%m-%d %H:%M:%S"`
+/usr/local/bin/node index.js
 
-git add .
-git commit -m "${DATE_N} Update"
+/usr/local/bin/git add .
+/usr/local/bin/git commit -m "${DATE_N} Update"
 
-git push
+/usr/local/bin/git push
+
+echo "Done"
 exit 0
