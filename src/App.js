@@ -65,6 +65,7 @@ function App() {
           </Row>
         </Container>
       </Jumbotron>
+      <hr className="my-4"></hr>
       <Container>
         <Tabs>
           <Tab eventKey="linkedin_fulltime" title="Full-time">

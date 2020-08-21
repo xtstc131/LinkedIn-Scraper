@@ -4,6 +4,7 @@ import React from "react";
 import linkedin_fulltime_data from "../linkedin_fulltime_output.json";
 import linkedin_intern_data from "../linkedin_intern_output.json";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
+import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import "./table.css";
 const { SearchBar } = Search;
@@ -31,6 +32,16 @@ const customTotal = (from, to, size) => (
     Showing {from} to {to} of {size} Results
   </span>
 );
+
+function customeFormatter(column, colIndex, { sortElement, filterElement }) {
+  return (
+    <div>
+      {column.text}
+      {sortElement}
+      {filterElement}
+    </div>
+  );
+}
 const options = {
   paginationSize: 5,
   pageStartIndex: 1,
@@ -86,6 +97,7 @@ class Table extends React.Component {
                 {...props.baseProps}
                 pagination={paginationFactory(options)}
                 caption={"latest update on: " + positions.time}
+                filter={filterFactory()}
                 defaultSorted={defaultSorted}
               />
             </div>
@@ -100,32 +112,39 @@ export default Table;
 const columns = [
   {
     dataField: "title",
-    text: "Title",
-    sort: true
+    text: "Title"
   },
   {
     dataField: "company",
     text: "Company",
-    sort: true
+    filter: textFilter(),
+    headerFormatter: customeFormatter
   },
   {
     dataField: "place",
     text: "Place",
-    sort: true
+    filter: textFilter(),
+    headerFormatter: customeFormatter
   },
   {
     dataField: "date",
     text: "Date",
-    sort: true
+    sort: true,
+    filter: textFilter(),
+    headerFormatter: customeFormatter
   },
   {
     dataField: "senorityLevel",
     text: "Level",
+    filter: textFilter(),
+    headerFormatter: customeFormatter,
     sort: true
   },
   {
     dataField: "employmentType",
     text: "Type",
+    filter: textFilter(),
+    headerFormatter: customeFormatter,
     sort: true
   },
   {

@@ -1,4 +1,10 @@
-const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
+const {
+  events,
+  IData,
+  LinkedinScraper,
+  ERelevanceFilterOptions,
+  ETimeFilterOptions
+} = require("linkedin-jobs-scraper");
 
 (async () => {
   // Programatically disable logger
@@ -79,23 +85,50 @@ const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
 
   // Run queries concurrently
   await Promise.all([
-    scraper.run("software intern", "Canada", {
-      paginationMax: 2
+    scraper.run(["software intern"], ["Canada"], {
+      paginationMax: 2,
+      descriptionProcessor,
+      optimize: true
     }),
     scraper.run("software co-op", "Canada", {
-      paginationMax: 2
+      paginationMax: 2,
+      descriptionProcessor,
+      // filter: {
+      //   relevance: ERelevanceFilterOptions.RELEVANT
+      // },
+      optimize: true
     }),
     scraper.run("software developer co-op", "Canada", {
-      paginationMax: 2
+      paginationMax: 2,
+      descriptionProcessor,
+      // filter: {
+      //   relevance: ERelevanceFilterOptions.RELEVANT
+      // },
+      optimize: true
     }),
     scraper.run("software developer intern", "Canada", {
-      paginationMax: 2
+      paginationMax: 2,
+      descriptionProcessor,
+      // filter: {
+      //   relevance: ERelevanceFilterOptions.RELEVANT
+      // },
+      optimize: true
     }),
     scraper.run("software engineer intern", "Canada", {
-      paginationMax: 2
+      paginationMax: 2,
+      descriptionProcessor,
+      // filter: {
+      //   relevance: ERelevanceFilterOptions.RELEVANT
+      // },
+      optimize: true
     }),
     scraper.run("software engineer co-op", "Canada", {
-      paginationMax: 2
+      paginationMax: 2,
+      descriptionProcessor,
+      // filter: {
+      //   relevance: ERelevanceFilterOptions.RELEVANT
+      // },
+      optimize: true
     })
   ]);
 
