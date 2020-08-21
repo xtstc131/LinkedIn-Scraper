@@ -44,13 +44,13 @@ function App() {
           <Row>
             <Col></Col>
             <Col xs={6}>
-              <h1 className="jumbotron-heading">
-                Ha
+              <h1>
                 <span
                   className="typer"
                   id="main"
-                  data-words="great,fun,lightweight,easy"
+                  data-words="MalloCat, LinkedIn Scraper"
                   data-delay="100"
+                  data-colors="#FFFFFF, #9ac4f8"
                   data-deleteDelay="1000"
                 ></span>
                 <span className="cursor" data-owner="main"></span>
@@ -63,7 +63,7 @@ function App() {
               <p>
                 <Button
                   className="rounded-pill"
-                  variant="outline-dark"
+                  variant="outline-light"
                   href="https://github.com/xtstc131/LinkedIn-Scraper"
                 >
                   Github
