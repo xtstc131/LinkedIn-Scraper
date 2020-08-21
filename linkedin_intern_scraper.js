@@ -57,7 +57,7 @@ const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
     let fs = require("fs");
     let time = '{"time" : ' + '"' + new Date().toLocaleString() + '",';
     fs.writeFile(
-      "src/linkedin_output.json",
+      "src/linkedin_intern_output.json",
       time + '"data" : ' + JSON.stringify(res.table) + "}",
       "utf8",
       () => {}
@@ -79,22 +79,22 @@ const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
 
   // Run queries concurrently
   await Promise.all([
-    scraper.run("software graduate", "Canada", {
+    scraper.run("software intern", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("software grad", "Canada", {
+    scraper.run("software co-op", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("software college", "Canada", {
+    scraper.run("software developer co-op", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("software university", "Canada", {
+    scraper.run("software developer intern", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("entry software", "Canada", {
+    scraper.run("software engineer intern", "Canada", {
       paginationMax: 2
     }),
-    scraper.run("junior developer", "Canada", {
+    scraper.run("software engineer co-op", "Canada", {
       paginationMax: 2
     })
   ]);

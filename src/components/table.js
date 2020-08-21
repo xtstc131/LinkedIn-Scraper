@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import BootstrapTable from "react-bootstrap-table-next";
 import React from "react";
-import * as data from "../linkedin_output.json";
+import linkedin_fulltime_data from "../linkedin_fulltime_output.json";
+import linkedin_intern_data from "../linkedin_intern_output.json";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import "./table.css";
@@ -47,33 +48,25 @@ const options = {
   lastPageTitle: "Last page",
   showTotal: true,
   paginationTotalRenderer: customTotal,
-  disablePageTitle: true,
-  sizePerPageList: [
-    {
-      text: "5",
-      value: 5
-    },
-    {
-      text: "10",
-      value: 10
-    },
-    {
-      text: "All",
-      value: data.data.length
-    }
-  ] // A numeric array is also available. the purpose of above example is custom the text
+  disablePageTitle: true
+  // A numeric array is also available. the purpose of above example is custom the text
 };
 // eslint-disable-next-line react/display-name
 class Table extends React.Component {
   render() {
-    // console.log(this.props.source);
+    console.log(linkedin_fulltime_data);
+    const positions =
+      this.props.source === "linkedin_fulltime"
+        ? linkedin_fulltime_data
+        : linkedin_intern_data;
+    console.log(positions);
     return (
       <div className="bg-white">
         <div className="bg-white"></div>
 
         <ToolkitProvider
           keyField="tk_id"
-          data={data.data}
+          data={positions.data}
           columns={columns}
           search
           columnToggle
@@ -82,7 +75,9 @@ class Table extends React.Component {
             <div classes="table">
               <SearchBar
                 {...props.searchProps}
-                placeholder={"Search for " + data.data.length + " items..."}
+                placeholder={
+                  "Search for " + positions.data.length + " items..."
+                }
               />
               <div />
               <BootstrapTable
@@ -90,7 +85,7 @@ class Table extends React.Component {
                 bootstrap4
                 {...props.baseProps}
                 pagination={paginationFactory(options)}
-                caption={"latest update on: " + data.time}
+                caption={"latest update on: " + positions.time}
                 defaultSorted={defaultSorted}
               />
             </div>

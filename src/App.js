@@ -12,7 +12,9 @@ import {
   Jumbotron,
   Button,
   Row,
-  Col
+  Col,
+  Tabs,
+  Tab
 } from "react-bootstrap";
 
 function App() {
@@ -64,7 +66,14 @@ function App() {
         </Container>
       </Jumbotron>
       <Container>
-        <Table source="linkedin"></Table>
+        <Tabs>
+          <Tab eventKey="linkedin_fulltime" title="Full-time">
+            <Table source="linkedin_fulltime"></Table>
+          </Tab>
+          <Tab eventKey="linkedin_intern" title="Intern">
+            <Table source="linkedin_intern"></Table>
+          </Tab>
+        </Tabs>
         <p>© 2020. All rights reserved.</p>
         <img
           src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app"
