@@ -39,7 +39,7 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Jumbotron className="text-center">
+      <Jumbotron className="text-center jumbotron">
         <Container>
           <Row>
             <Col></Col>
@@ -66,21 +66,23 @@ function App() {
         </Container>
       </Jumbotron>
       <hr className="my-4"></hr>
-      <Container>
-        <Tabs>
-          <Tab eventKey="linkedin_fulltime" title="Full-time">
-            <Table source="linkedin_fulltime"></Table>
-          </Tab>
-          <Tab eventKey="linkedin_intern" title="Intern">
-            <Table source="linkedin_intern"></Table>
-          </Tab>
-        </Tabs>
-        <p>© 2020. All rights reserved.</p>
-        <img
-          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app"
-          alt=""
-        />
-      </Container>
+      <div className="content">
+        <Container>
+          <Tabs>
+            <Tab eventKey="linkedin_fulltime" title="Full-time">
+              <Table source="linkedin_fulltime"></Table>
+            </Tab>
+            <Tab eventKey="linkedin_intern" title="Intern">
+              <Table source="linkedin_intern"></Table>
+            </Tab>
+          </Tabs>
+          <p>© 2020. All rights reserved.</p>
+          <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flinkedin-spider.netlify.app"
+            alt=""
+          />
+        </Container>
+      </div>
     </div>
   );
 }
