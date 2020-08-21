@@ -48,9 +48,9 @@ function App() {
                 <span
                   className="typer"
                   id="main"
-                  data-words="MalloCat, LinkedIn Scraper"
+                  data-words="MalloCat, A LinkedIn Scraper"
                   data-delay="100"
-                  data-colors="#FFFFFF, #9ac4f8"
+                  data-colors="#9ac4f8"
                   data-deleteDelay="1000"
                 ></span>
                 <span className="cursor" data-owner="main"></span>
