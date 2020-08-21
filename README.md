@@ -22,8 +22,7 @@ then run `npm install`. This will install some dependencies using npm. The Envir
 I use is `Node 12.18` and `npm 6.14`.
 
 To display the website, run `npm start`. Then visit `localhost:3000` as default. To run the
-scraper, simply run `node index.js`, and wait for 2 minutes until page reloading.
-
+scraper, simply run `node linkedin_xxx_scraper.js` (xxx can be intern or fulltime), and wait for 2 minutes until page reloading.  Or you can run 'autopush.sh' shell script which runs scraper and push 
 ## Todos
 
 - spider server
