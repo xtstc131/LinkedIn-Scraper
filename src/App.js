@@ -44,16 +44,17 @@ function App() {
           <Row>
             <Col></Col>
             <Col xs={6}>
-              <h1>
-                <span
+              <h1 className="my-head">
+                {/* <span
                   className="typer"
                   id="main"
-                  data-words="MalloCat, A LinkedIn Scraper"
+                  data-words=""
                   data-delay="100"
-                  data-colors="#9ac4f8"
-                  data-deleteDelay="1000"
+                  data-colors="#FFFFFF,#9ac4f8"
+                  data-delete-delay="1000"
                 ></span>
-                <span className="cursor" data-owner="main"></span>
+                <span className="cursor" data-owner="main"></span> */}
+                MalloCat, A LinkedIn Scraper
               </h1>
               <p className="lead ">
                 MalloCat is a platform for displaying the latest Software
