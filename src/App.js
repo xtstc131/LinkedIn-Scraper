@@ -44,7 +44,17 @@ function App() {
           <Row>
             <Col></Col>
             <Col xs={6}>
-              <h1 className="jumbotron-heading">MalloCat</h1>
+              <h1 className="jumbotron-heading">
+                Ha
+                <span
+                  className="typer"
+                  id="main"
+                  data-words="great,fun,lightweight,easy"
+                  data-delay="100"
+                  data-deleteDelay="1000"
+                ></span>
+                <span className="cursor" data-owner="main"></span>
+              </h1>
               <p className="lead ">
                 MalloCat is a platform for displaying the latest Software
                 Engineer job information to the new graduates. Supported by
