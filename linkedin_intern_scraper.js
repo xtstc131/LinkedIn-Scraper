@@ -1,10 +1,4 @@
-const {
-  events,
-  IData,
-  LinkedinScraper,
-  ERelevanceFilterOptions,
-  ETimeFilterOptions
-} = require("linkedin-jobs-scraper");
+const { events, LinkedinScraper } = require("linkedin-jobs-scraper");
 
 (async () => {
   // Programatically disable logger
@@ -32,7 +26,6 @@ const {
       company,
       place,
       date,
-      description,
       senorityLevel,
       jobFunction,
       employmentType,
@@ -77,22 +70,15 @@ const {
   scraper.on(events.puppeteer.browser.disconnected, () => {});
 
   // This will be executed on browser side
-  const descriptionProcessor = () =>
-    document
-      .querySelector(".description__text")
-      .innerText.replace(/[\s\n\r]+/g, " ")
-      .trim();
 
   // Run queries concurrently
   await Promise.all([
     scraper.run(["software intern"], ["Canada"], {
       paginationMax: 2,
-      descriptionProcessor,
       optimize: true
     }),
     scraper.run("software co-op", "Canada", {
       paginationMax: 2,
-      descriptionProcessor,
       // filter: {
       //   relevance: ERelevanceFilterOptions.RELEVANT
       // },
@@ -100,7 +86,6 @@ const {
     }),
     scraper.run("software developer co-op", "Canada", {
       paginationMax: 2,
-      descriptionProcessor,
       // filter: {
       //   relevance: ERelevanceFilterOptions.RELEVANT
       // },
@@ -108,7 +93,6 @@ const {
     }),
     scraper.run("software developer intern", "Canada", {
       paginationMax: 2,
-      descriptionProcessor,
       // filter: {
       //   relevance: ERelevanceFilterOptions.RELEVANT
       // },
@@ -116,7 +100,6 @@ const {
     }),
     scraper.run("software engineer intern", "Canada", {
       paginationMax: 2,
-      descriptionProcessor,
       // filter: {
       //   relevance: ERelevanceFilterOptions.RELEVANT
       // },
@@ -124,7 +107,6 @@ const {
     }),
     scraper.run("software engineer co-op", "Canada", {
       paginationMax: 2,
-      descriptionProcessor,
       // filter: {
       //   relevance: ERelevanceFilterOptions.RELEVANT
       // },
