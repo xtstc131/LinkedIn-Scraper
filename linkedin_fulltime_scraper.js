@@ -96,6 +96,10 @@ const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
     }),
     scraper.run("junior developer", "Canada", {
       paginationMax: 2
+    }),
+
+    scraper.run("software dev eng", "Canada", {
+      paginationMax: 2
     })
   ]);
 
