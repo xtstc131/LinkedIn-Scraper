@@ -24,7 +24,7 @@ const {
 
   // Listen for custom events
   scraper.on(
-    events.custom.data,
+    events.scraper.data,
     ({
       query,
       location,
@@ -33,7 +33,7 @@ const {
       company,
       place,
       date,
-      description,
+      // description,
       senorityLevel,
       jobFunction,
       employmentType,
@@ -56,10 +56,10 @@ const {
     }
   );
 
-  scraper.on(events.custom.error, err => {
+  scraper.on(events.scraper.error, err => {
     console.error(err);
   });
-  scraper.on(events.custom.end, () => {
+  scraper.on(events.scraper.end, () => {
     console.log("All done!");
     let fs = require("fs");
     let time = '{"time" : ' + '"' + new Date().toLocaleString() + '",';
@@ -88,7 +88,7 @@ const {
   await Promise.all([
     scraper.run([
       {
-        query: "Engineer",
+        query: "Software Engineer New Grad",
         options: {
           locations: ["Canada"], // This will be merged with the global options => ["United States", "Europe"]
           filters: {
