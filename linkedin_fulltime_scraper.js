@@ -1,4 +1,11 @@
-const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
+const {
+  LinkedinScraper,
+  relevanceFilter,
+  timeFilter,
+  typeFilter,
+  experienceLevelFilter,
+  events
+} = require("linkedin-jobs-scraper");
 
 (async () => {
   // Programatically disable logger
@@ -79,28 +86,17 @@ const { LinkedinScraper, events } = require("linkedin-jobs-scraper");
 
   // Run queries concurrently
   await Promise.all([
-    scraper.run("software graduate", "Canada", {
-      paginationMax: 2
-    }),
-    scraper.run("software grad", "Canada", {
-      paginationMax: 2
-    }),
-    scraper.run("software college", "Canada", {
-      paginationMax: 2
-    }),
-    scraper.run("software university", "Canada", {
-      paginationMax: 2
-    }),
-    scraper.run("entry software", "Canada", {
-      paginationMax: 2
-    }),
-    scraper.run("junior developer", "Canada", {
-      paginationMax: 2
-    }),
-
-    scraper.run("software dev eng", "Canada", {
-      paginationMax: 2
-    })
+    scraper.run([
+      {
+        query: "Engineer",
+        options: {
+          locations: ["Canada"], // This will be merged with the global options => ["United States", "Europe"]
+          filters: {
+            type: [typeFilter.FULL_TIME, typeFilter.CONTRACT]
+          }
+        }
+      }
+    ])
   ]);
 
   // Close browser
