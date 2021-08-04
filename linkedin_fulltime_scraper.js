@@ -92,7 +92,7 @@ const {
         options: {
           locations: ["Canada"], // This will be merged with the global options => ["United States", "Europe"]
           filters: {
-            type: [typeFilter.FULL_TIME, typeFilter.CONTRACT]
+            type: [typeFilter.FULL_TIME]
           }
         }
       }
