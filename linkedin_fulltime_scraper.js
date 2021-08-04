@@ -88,7 +88,25 @@ const {
   await Promise.all([
     scraper.run([
       {
-        query: "Software Engineer New Grad",
+        query: "Software Engineer",
+        options: {
+          locations: ["Canada"], // This will be merged with the global options => ["United States", "Europe"]
+          filters: {
+            type: [typeFilter.FULL_TIME]
+          }
+        }
+      },
+      {
+        query: "Software Engineering",
+        options: {
+          locations: ["Canada"], // This will be merged with the global options => ["United States", "Europe"]
+          filters: {
+            type: [typeFilter.FULL_TIME]
+          }
+        }
+      },
+      {
+        query: "Software Development Engineer 2022",
         options: {
           locations: ["Canada"], // This will be merged with the global options => ["United States", "Europe"]
           filters: {
